@@ -13,9 +13,11 @@ class User():
 class fullMenu():
   mealItems = []
   date = ""
+  sort = ""
+  search = ""
 
 
-class Meals():
+class Meal():
   name = ""
   serving_size = ""
   full_description = ""
@@ -28,11 +30,14 @@ class Price():
   totalPrice = ""
 
 
-class Order(Meals, Price):
+class Order(Meal, Price):
   orderId = ""
+  orderedMeal = Meal.name
+  quantity = Meal.serving_size
   short_description = ""
   isPacked = False
   additional_needs = ""
+  price = Price.totalPrice
 
 
 user = User()  # instantiate the user class
